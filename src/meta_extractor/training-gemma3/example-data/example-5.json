@@ -1,0 +1,21 @@
+{
+  "title": "Environmental Risk Advisory",
+  "subtitle": "Projected Impacts of Coastal Erosion",
+  "publication_year": 2024,
+  "language_as_iso639-2": "eng",
+  "identifiers": {
+    "ISBN": "000-0-0000005-0"
+  },
+  "publisher": [
+    "Ministry for Ecological Safeguards"
+  ],
+  "creator_persons": [
+    "Talin Ores"
+  ],
+  "creator_corporations": [
+    "Geospatial Analysis Centre"
+  ],
+  "country_of_publication_iso639-1": [
+    "cr"
+  ]
+}
