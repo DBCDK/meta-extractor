@@ -57,7 +57,7 @@ You can try it out on the one sample pdf we have provided under `src/meta_extrac
 ### 3. **Splitting data set** 
 Divide data into training, validation and test sets
 
-Remember to split your data into training, validation and possible also test sets. 
+Remember to split your data into training, test and possible also validation sets. 
 
 
 ### 4. **Build prompt-answers pairs**: 
