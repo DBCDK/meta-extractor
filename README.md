@@ -1,10 +1,18 @@
 # meta-extractor
 This project contains a description for how we pretrained a gemma3 model for metadata extraction from PDFs and how to use it in a microservice to convert PDFs to MARC records.
 
+The following is a description of how you might reproduce our results. We have tried to provide scripts and synthetic data examples to help you with this.
+
+You will in our code see remnants of paths we went down during development. An example of this is that we tried a version with metadata 
+
+tags in Danish or in English. We ended up using only English tags for the final model, as it performed just as well as the Danish version.
+
 ## Pretraining the Gemma3 Model
 To pretrain the Gemma3 model for metadata extraction, follow these steps:
 
-### 1. **Data Collection**: Gather a diverse dataset of PDFs along with their corresponding metadata in JSON format.
+### 1. **Data Collection**: 
+Gather a diverse dataset of PDFs along with their corresponding metadata in JSON format.
+
 We cannot provide the real examples but see examples of synthetic data under `meta_extractor/training-gemma3/example-data`.
 
 Example naming: example-\<no>.json 
@@ -12,7 +20,8 @@ Example naming: example-\<no>.json
 We gathered 10.000 examples of public articles in PDF format along with their metadata in JSON format.
 We had the metadata in MARC format and converted it into a simple JSON format. Script not provided. 
 
-### 2. **Data Preprocessing**: Convert the PDFs into text. 
+### 2. **Data Preprocessing**: 
+Convert the PDFs into text. 
 
 We used the library PyMuPDF for this purpose. See the script `src/meta_extractor/training-gemma3/pdf2text.py`
 
@@ -24,7 +33,7 @@ You can extract text from PDFs using the following script:
 
 `pip install -e .`
 
-`pdf2text -i path/to/pdfs -o path/to/output/texts [-s/--short]`
+`pdf2text -i path/to/pdfs -o path/to/texts [-s/--short]`
 
 Where 
 -i is the input folder with pdfs, 
@@ -37,18 +46,31 @@ We always extract the last two pages of the text.
 
 The script assumes that pdf files are named filename.pdf, and will output a corresponding filename.txt
 
-### 3. Divide data into training, validation and test sets
-To divide the data into training, validation and test sets use the script
-`train-test-val -t path/to/output/texts/ -m path/to/metadata/`
+### 3. **Splitting data set** 
+Divide data into training, validation and test sets
+
+Remember to split your data into training, validation and possible also test sets. 
 
 
-Where 
--t is the folder with the extracted texts from pdfs, 
--m is the folder with the json metadata with either English or Danish key names, assuming the json are named pid.json for English and pid_dan.json for danish.
---train is the train ratio (default: 0.8)
---val is the val ratio (default: 0.1)
---test is the test ratio (default: 0.1)
---seed is the random seed (default: 42)
---move will move the files into the created folders instead of copying them if added.
+### 4. **Build prompt-answers pairs**: 
+Create prompt-answer pairs for training and validation the model.
 
-The script will create three folders in the texts and metadata folders named train, val and test and copy the files into these folders.
+To build the prompt conversations for training you can use the script.
+
+`build_prompt -t path/to/texts -m path/to/metadata/ -p src/meta_extractor/data/prompt_production.json -o conversations.jsonl`
+
+Where
+-t is the folder with the extracted texts from pdfs,
+-m is the folder with the json metadata files,
+-p is the path to the prompt you want to use
+-o is the path to the output file that will be saved with the conversations
+
+e.g. 
+`build_prompt -t src/meta-extractor/example-data/texts/train -m src/meta-extractor/example-data/metadata/train -p src/meta_extractor/data/prompt_production.json -o conversations_train.jsonl`
+or
+`build_prompt -t src/meta-extractor/example-data/texts/test -m src/meta-extractor/example-data/metadata/test -p src/meta_extractor/data/prompt_production.json -o conversations_test.jsonl`
+
+
+### 5. **Model Training**: Use the Gemma3 model architecture and fine-tune it on your dataset.
+
+
