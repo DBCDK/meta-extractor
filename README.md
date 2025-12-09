@@ -61,7 +61,7 @@ Remember to split your data into training, test and possible also validation set
 
 
 ### 4. **Build prompt-answers pairs**: 
-Create prompt-answer pairs for training and validation the model.
+Create prompt-answer pairs for training and testing the model.
 
 To build the prompt conversations for training you can use the script.
 
@@ -73,9 +73,9 @@ Where
 -p is the path to the prompt you want to use
 -o is the path to the output file that will be saved with the conversations
 
-e.g. 
+e.g. for training data you can run:
 `build_prompt -t src/meta_extractor/training_gemma3/example-data/texts/train/ -m src/meta_extractor/training_gemma3/example-data/metadata/train/ -p src/meta_extractor/data/prompt_production.json -o conversations_train.jsonl`
-or
+or for test data you can run:
 `build_prompt -t src/meta-extractor/example-data/texts/test -m src/meta-extractor/example-data/metadata/test -p src/meta_extractor/data/prompt_production.json -o conversations_test.jsonl`
 
 
