@@ -1,5 +1,5 @@
 # meta-extractor
-This project contains a description for how we pretrained a gemma3 model for metadata extraction from PDFs and how to use it in a microservice to convert PDFs to MARC records.
+This project contains a description for how we pretrained a gemma3 model for metadata extraction from Danish PDFs and how to use it in a microservice to convert PDFs to Danish danMARC records.
 
 The following is a description of how you might reproduce our results. We have tried to provide scripts and synthetic data examples to help you with this.
 
