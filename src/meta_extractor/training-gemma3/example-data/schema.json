@@ -1,0 +1,69 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "title": "Metadata Schema for training-gemma3 example-data",
+  "properties": {
+    "title": {
+      "description": "Title of a publication",
+      "type": "string"
+    },
+    "subtitle": {
+      "description": "Subtitle of a publication",
+      "type": "string"
+    },
+    "publication_year": {
+      "description": "Year of the publication as a four-digit integer, like 2022",
+      "type": "integer"
+    },
+    "language_as_iso639-2": {
+      "description": "Language of the publication in ISO 639-2 code, like 'dan' for Danish",
+      "type": "string"
+    },
+    "identifiers": {
+      "description": "Unique identifiers for the publication, like ISBN",
+      "type": "object",
+      "properties": {
+        "ISBN": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "ISBN"
+      ]
+    },
+    "publisher": {
+      "description": "List of publishers of the publication",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "creator_persons": {
+      "description": "List of individual creators (authors, illustrators, etc.) of the publication. The role of the creator should be added in square brackets after the name e.g. 'Jens Hansen [forfatter]'",
+
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "creator_corporations": {
+      "description": "List of corporate creators (organizations, companies, etc.) of the publication. The role of the creator should be added in square brackets after the name e.g. 'Sundhedsstyrelsen [udgiver]'",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "country_of_publication_iso639-1": {
+      "description": "List of countries where the publication was published, in ISO 3166-1 alpha-2 code, like 'dk' for Denmark",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}
+
+
