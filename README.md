@@ -31,7 +31,7 @@ Where
 
 -o is the output folder where the extracted text from the pdfs will be stored.
 
--o|--short is for extracting a shorter version of the text where we only look at the first 3 pages instead of the first 13 pages.
+-s|--short is for extracting a shorter version of the text where we only look at the first 3 pages instead of the first 13 pages.
 
 We always extract the last two pages of the text. 
 
