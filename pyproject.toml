@@ -1,0 +1,44 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "meta-extractor"
+version = "1.0"
+description = "meta extractor service"
+readme = "README.md"
+requires-python = ">=3.8"
+license = "Apache-2.0"
+dependencies = [
+    "requests[socks]",
+    "pre-commit",
+    "pymupdf",
+    'tornado',
+    'transformers',
+]
+
+[project.scripts]
+pdf2text = "meta_extractor.train_model.pdf2text:cli"
+build_prompt = "meta_extractor.train_model.build_prompt:cli"
+train-test-val = "meta_extractor.train_model.train_test_val_set:cli"
+test-and-eval = "meta_extractor.train_model.eval:cli"
+save-model-for-tgi = "meta_extractor.train_model.prepare_finetuned_gemma3_for_tgi:cli"
+meta-extractor-service = "meta_extractor.service:cli"
+
+[tool.setuptools]
+package-dir = { "" = "src" }
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+"meta_extractor" = ["data/*","data/index/html/*", "data/prompts/prompt_production.json"]
+
+[tool.setuptools.exclude-package-data]
+mypackage = ["training-gemma3/*", "training-gemma3/tests/*"]
+
+[tool.pytest.ini_options]
+testpaths = ["src/metadata_extractor/tests/", "tests/"]
+
+[tool.ruff]
+line-length = 120
