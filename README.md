@@ -51,6 +51,9 @@ We always extract the last two pages of the text.
 
 The script assumes that pdf files are named filename.pdf, and will output a corresponding filename.txt
 
+You can try it out on the one sample pdf we have provided under `src/meta_extractor/training-gemma3/example-data/pdfs/example-11.pdf`
+
+
 ### 3. **Splitting data set** 
 Divide data into training, validation and test sets
 

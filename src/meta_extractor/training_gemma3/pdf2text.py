@@ -3,7 +3,7 @@ import argparse
 import logging
 from pathlib import Path
 
-from src.meta_extractor.pdf_text_extractor import ExtractTextConfig, extract_text
+from meta_extractor.pdf_text_extractor import ExtractTextConfig, extract_text
 
 
 logging.basicConfig(level=logging.INFO)
