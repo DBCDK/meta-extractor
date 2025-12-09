@@ -21,7 +21,9 @@ We cannot provide the real examples but see examples of synthetic data under `me
 Example naming: example-\<no>.json 
 
 We gathered 10.000 examples of public articles in PDF format along with their metadata in JSON format.
-We had the metadata in MARC format and converted it into a simple JSON format. Script not provided. 
+We had the metadata in MARC format and converted it into a simple JSON format. 
+
+You can see the json-schema for the metadata under `src/meta_extractor/training-gemma3/metadata-schema.json` 
 
 ### 2. **Data Preprocessing**: 
 Convert the PDFs into text. 
