@@ -1,0 +1,16 @@
+{
+  "title": "National Public Health Preparedness Outlook",
+  "subtitle": "Assessment of Response Protocols and Resource Readiness",
+  "publication_year": 1998,
+  "language_as_iso639-2": "eng",
+  "identifiers": { "ISBN": "099-9-4444442-9" },
+  "publisher": ["Health Security Authority"],
+  "creator_persons": [
+    "Marel Orit [author]",
+    "Tilo Envar [editor]"
+  ],
+  "creator_corporations": [
+    "Civic Emergency Planning Unit"
+  ],
+  "country_of_publication_iso639-1": ["us"]
+}
