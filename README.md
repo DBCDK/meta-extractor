@@ -10,6 +10,9 @@ tags in Danish or in English. We ended up using only English tags for the final 
 ## Pretraining the Gemma3 Model
 To pretrain the Gemma3 model for metadata extraction, follow these steps:
 
+### 0. **Setup Environment**:
+Ensure you have the necessary environment set up with required libraries. You can use the provided `requirements-training.txt` file to install dependencies.
+
 ### 1. **Data Collection**: 
 Gather a diverse dataset of PDFs along with their corresponding metadata in JSON format.
 
@@ -66,7 +69,7 @@ Where
 -o is the path to the output file that will be saved with the conversations
 
 e.g. 
-`build_prompt -t src/meta-extractor/example-data/texts/train -m src/meta-extractor/example-data/metadata/train -p src/meta_extractor/data/prompt_production.json -o conversations_train.jsonl`
+`build_prompt -t src/meta_extractor/training_gemma3/example-data/texts/train/ -m src/meta_extractor/training_gemma3/example-data/metadata/train/ -p src/meta_extractor/data/prompt_production.json -o conversations_train.jsonl`
 or
 `build_prompt -t src/meta-extractor/example-data/texts/test -m src/meta-extractor/example-data/metadata/test -p src/meta_extractor/data/prompt_production.json -o conversations_test.jsonl`
 
