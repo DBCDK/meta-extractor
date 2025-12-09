@@ -39,9 +39,7 @@ The script assumes that pdf files are named filename.pdf, and will output a corr
 
 ### 3. Divide data into training, validation and test sets
 To divide the data into training, validation and test sets use the script
-`train-test-val -t data/texts/ -m data/metadata/`
-or
-`train-test-val -t /data/meta-extractor/text/longer/ -m /data/meta-extractor/metadata/`
+`train-test-val -t path/to/output/texts/ -m path/to/metadata/`
 
 
 Where 
