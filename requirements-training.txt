@@ -1,0 +1,8 @@
+ packaging==23.2
+ setuptools==75.8.0
+ wheel
+ ninja
+ torch
+ axolotl==0.10.0
+ peft==0.15.2
+ transformers
