@@ -3,9 +3,9 @@ This project contains a description for how we pretrained a gemma3 model for met
 
 The following is a description of how you might reproduce our results. We have tried to provide scripts and synthetic data examples to help you with this.
 
-You will in our code see remnants of paths we went down during development. An example of this is that we tried a version with metadata 
+You will in our code see remnants of paths we went down during development. An example of this is that we tried a version with metadata
 
-tags in Danish or in English. We ended up using only English tags for the final model, as it performed just as well as the Danish version.
+keys in Danish or in English. We ended up using only English keys for the final model, as it performed just as well as the Danish version.
 
 ## Pretraining the Gemma3 Model
 To pretrain the Gemma3 model for metadata extraction, follow these steps:
@@ -71,7 +71,7 @@ Where
 -t is the folder with the extracted texts from pdfs,
 -m is the folder with the json metadata files,
 -p is the path to the prompt you want to use
--o is the path to the output file that will be saved with the conversations
+-o is the path to the output file where the conversations will be saved (one pr row)
 
 e.g. for training data you can run:
 `build_prompt -t src/meta_extractor/training_gemma3/example-data/texts/train/ -m src/meta_extractor/training_gemma3/example-data/metadata/train/ -p src/meta_extractor/data/prompt_production.json -o conversations_train.jsonl`
