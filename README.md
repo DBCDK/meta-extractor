@@ -256,3 +256,34 @@ So the validation step is quite strict and might remove some correct values.
 The model we pretrained is published on Huggingface and can be found here: 
 
 https://huggingface.co/DBCDigital/gemma-3-4b-it_qlora_pdf_metadata_extractor
+
+## Internal user interface for use with microservice
+We have also created an internal user interface for using the model via a microservice. 
+
+This interface is only meant for internal use and the functionality is meant to be incorporated 
+in their actual cataloging system later.
+
+We have not provided the code for the interface, but we have a few screenshots of the interface to show how it works.
+
+We made a simple interface where you can add a url to a pdf and get the extracted metadata in json format. 
+We also changed this json format to match the danMARC format used in the DBC cataloging system.
+
+We used this interface for letting our end users test the model and give feedback on the results.
+
+The plain interface looks like this:
+
+![Plain interface](images/Add-pdf-url.png)
+
+After you add the url to the pdf and click "Udtræk metadata" (Extract metadata) you will get the extracted metadata in danMARC2 format.
+
+![Added url](images/added-pdf-url.png)
+
+![danMarc2 record](images/generated-marc-record.png)
+
+You can also click on "JSON udtræk" (Show extracted json) to see the generated json output from the model before it was converted to danMARC2 format.
+
+![Original json](images/generated-json.png)
+
+Lastly you can also click on "Tekst udtrukket fra pdf" (Show extracted text) to see the text that was extracted from the pdf and used as input for the model.
+
+![Extracted text](images/extracted-text.png)
