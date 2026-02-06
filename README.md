@@ -137,7 +137,7 @@ If you already have a results file and just want to get the analysis you can run
 `test-and-eval /path/to/trained-model/ /path/to/results-dir file-prefix-name -e`
 
 #### Our Results
-Using the above method we pretrained a Gemma3 model on about 9.000 examples and evaluated it on 990 test examples which had 10.890 different metadata fields.
+Using the above method we trained a Gemma3 model on about 9.000 examples and evaluated it on 990 test examples which had 10.890 different metadata fields.
 The following results cover pair-wise comparisons of these 10.890 fields.
 
 
