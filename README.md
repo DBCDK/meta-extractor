@@ -3,9 +3,19 @@ This project contains a description for how we pretrained a gemma3 model for met
 
 The following is a description of how you might reproduce our results. We have tried to provide scripts and synthetic data examples to help you with this.
 
-You will in our code see remnants of paths we went down during development. An example of this is that we tried a version with metadata
+You will in our code see remnants of paths we went down during development. An example of this is that we tried a version with metadata keys in Danish or in English. We ended up using only English keys for the final model, as it performed just as well as the Danish version.
 
-keys in Danish or in English. We ended up using only English keys for the final model, as it performed just as well as the Danish version.
+Table of contents:
+- [Pretraining the Gemma3 Model](#pretraining-the-gemma3-model)
+  - [0. Setup Environment](#0-setup-environment)
+  - [1. Data Collection](#1-data-collection)
+  - [2. Data Preprocessing](#2-data-preprocessing)
+  - [3. Splitting data set](#3-splitting-data-set)
+  - [4. Build prompt-answers pairs](#4-build-prompt-answers-pairs)
+  - [5. Model Training](#5-model-training)
+  - [6. Model Evaluation](#6-model-evaluation)
+- [Evaluation Results](#evaluation-results)
+- [Published model on huggingface](#published-model-on-huggingface)
 
 ## Pretraining the Gemma3 Model
 To pretrain the Gemma3 model for metadata extraction, follow these steps:
@@ -136,7 +146,7 @@ If you already have a results file and just want to get the analysis you can run
 
 `test-and-eval /path/to/trained-model/ /path/to/results-dir file-prefix-name -e`
 
-#### Our Results
+## Evaluation Results
 Using the above method we trained a Gemma3 model on about 9.000 examples and evaluated it on 990 test examples which had 10.890 different metadata fields.
 The following results cover pair-wise comparisons of these 10.890 fields.
 
@@ -242,3 +252,7 @@ The expected metadata also sometimes contained translated values that were not p
 
 So the validation step is quite strict and might remove some correct values.
 
+## Published model on huggingface
+The model we pretrained is published on Huggingface and can be found here: 
+
+https://huggingface.co/DBCDigital/gemma-3-4b-it_qlora_pdf_metadata_extractor
