@@ -20,7 +20,7 @@ dependencies = [
 [project.scripts]
 pdf2text = "meta_extractor.training_gemma3.pdf2text:cli"
 build_prompt = "meta_extractor.training_gemma3.build_prompt:cli"
-#test-and-eval = "meta_extractor.training_gemma3.eval:cli"
+test-and-eval = "meta_extractor.training_gemma3.eval:cli"
 #save-model-for-tgi = "meta_extractor.training_gemma3.prepare_finetuned_gemma3_for_tgi:cli"
 #meta-extractor-service = "meta_extractor.service:cli"
 
