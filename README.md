@@ -260,8 +260,7 @@ https://huggingface.co/DBCDigital/gemma-3-4b-it_qlora_pdf_metadata_extractor
 ## Internal user interface for use with microservice
 We have also created an internal user interface for using the model via a microservice. 
 
-This interface is only meant for internal use and the functionality is meant to be incorporated 
-in their actual cataloging system later.
+This interface is only meant for internal use and the functionality is meant to be incorporated in our cataloging system.
 
 We have not provided the code for the interface, but we have a few screenshots of the interface to show how it works.
 
