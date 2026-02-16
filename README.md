@@ -24,16 +24,20 @@ To pretrain the Gemma3 model for metadata extraction, follow these steps:
 Ensure you have the necessary environment set up with required libraries. You can use the provided `requirements-training.txt` file to install dependencies.
 
 ### 1. **Data Collection**: 
-Gather a diverse dataset of PDFs along with their corresponding metadata in JSON format.
+We gathered a diverse dataset of 10,000 public articles in PDF format along with their corresponding metadata in JSON format.
 
-We cannot provide the real examples but see examples of synthetic data under `meta_extractor/training-gemma3/example-data`.
+The original metadata was available in MARC format and was converted into a simplified JSON structure. The JSON schema used for the metadata can be found at:
+`src/meta_extractor/training-gemma3/metadata-schema.json`
 
-Example naming: example-\<no>.json 
+We cannot provide the original training examples directly, but synthetic examples are available under:
+`meta_extractor/training-gemma3/example-data`
 
-We gathered 10.000 examples of public articles in PDF format along with their metadata in JSON format.
-We had the metadata in MARC format and converted it into a simple JSON format. 
+Example naming convention: example-<no>.json
 
-You can see the json-schema for the metadata under `src/meta_extractor/training-gemma3/metadata-schema.json` 
+Additionally, a file containing URLs to the PDFs used for training has been added to the repository:
+`training-pdfs.csv`
+
+This allows others to download the source PDFs themselves. Please note that some of the URLs may no longer be active.
 
 ### 2. **Data Preprocessing**: 
 Convert the PDFs into text. 
