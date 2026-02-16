@@ -256,7 +256,7 @@ The expected metadata also sometimes contained translated values that were not p
 
 So the validation step is quite strict and might remove some correct values.
 
-## Published model on huggingface
+## Published model on Huggingface
 The model we pretrained is published on Huggingface and can be found here: 
 
 https://huggingface.co/DBCDigital/gemma-3-4b-it_qlora_pdf_metadata_extractor
